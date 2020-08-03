@@ -264,7 +264,7 @@
 
 <img src="https://github.com/ziseSunny/virus/blob/master/各因素对于患者数量的影响.png" alt="各因素对于患者数量的影响" style="zoom:60%;" />
 
-最后的$2$条线几近重合，单独进行分析：
+最后的2条线几近重合，单独进行分析：
 
 <img src="https://github.com/ziseSunny/virus/blob/master/是否引入小区管控对于患者数量的影响.png" alt="是否引入小区管控对于患者数量的影响" style="zoom:60%;" />
 
