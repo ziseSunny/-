@@ -71,11 +71,11 @@
 
    **$SIRD$模型的示意图：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/SIRD模型.png" alt="SIR模型" style="zoom:50%;" >
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/封城时间对于患者数量的影响.png" alt="SIR模型" style="zoom:50%;" >
 
    **密切接触的模型：**整个正方形代表所在区域，圆形代表人
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/密切接触.png" alt="密切接触" style="zoom:40%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/密切接触.png" alt="密切接触" style="zoom:40%;" />
 
 2. **密切接触的公式：**$n$的公式通过投点实验归纳得出
    $$
@@ -160,7 +160,7 @@ $$
 
 2. 示意图：$\beta$代表的是易感人群密切接触潜伏期人群或患者而成为潜伏期患者的概率
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/SEIRD.png" alt="SEIRD" style="zoom:50%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/SEIRD.png" alt="SEIRD" style="zoom:50%;" />
 
 3. **基本的$3$阶段模型：**
 
@@ -473,7 +473,7 @@ $$
 
    **患者人数的变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/引入流动系数后的SEIR模型对应的患者人数趋势图.png" alt="引入流动系数后的SEIR模型对应的患者人数趋势图" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/引入流动系数后的SEIR模型对应的患者人数趋势图.png" alt="引入流动系数后的SEIR模型对应的患者人数趋势图" style="zoom:60%;" />
 
    累计确诊数量：$65861$，疫情得到基本控制的时间为：第$140$天
 
@@ -494,11 +494,11 @@ $$
 
    **不同封城时间对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/封城时间对于患者数量的影响.png" alt="封城时间对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/封城时间对于患者数量的影响.png" alt="封城时间对于患者数量的影响" style="zoom:60%;" />
 
    $d_1=56$对应的$I$过大，选取前$4$条曲线单独进行分析：
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/封城时间对于患者数量的影响_clear.png" alt="封城时间对于患者数量的影响_clear" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/封城时间对于患者数量的影响_clear.png" alt="封城时间对于患者数量的影响_clear" style="zoom:60%;" />
 
    **封城时间对于患者人数的影响较为显著**
 
@@ -513,11 +513,11 @@ $$
 
    **不同自我防护开始时间对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/自我防护时间对于患者数量的影响.png" alt="自我防护时间对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/自我防护时间对于患者数量的影响.png" alt="自我防护时间对于患者数量的影响" style="zoom:60%;" />
 
    $d_2=51$和$d_2=56$对应的$I$太大，选取前$3$条曲线单独进行分析：
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/自我防护时间对于患者数量的影响_clear.png" alt="自我防护时间对于患者数量的影响_clear" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/自我防护时间对于患者数量的影响_clear.png" alt="自我防护时间对于患者数量的影响_clear" style="zoom:60%;" />
 
    **自我防护开始时间对于患者人数的影响较为显著**
 
@@ -532,11 +532,11 @@ $$
 
    **不同医疗援助到达时间对应的患者人数趋势图：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/医疗援助时间对于患者数量的影响.png" alt="医疗援助时间对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/医疗援助时间对于患者数量的影响.png" alt="医疗援助时间对于患者数量的影响" style="zoom:60%;" />
 
    $d_3=68$对应的$I$太大，选取前$4$条曲线进行分析：
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/医疗援助时间对于患者数量的影响_clear.png" alt="医疗援助时间对于患者数量的影响_clear" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/医疗援助时间对于患者数量的影响_clear.png" alt="医疗援助时间对于患者数量的影响_clear" style="zoom:60%;" />
 
    **医疗援助到达时间对患者人数的影响不如封城时间和自我防护开始时间显著，但$d_3=63～68$中存在一个关键的时间点，一旦医疗援助到达时间晚于此时间点，防控形势将发生很大变化**
 
@@ -551,7 +551,7 @@ $$
 
    **不同小区管控开始时间对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/小区管控时间对于患者数量的影响.png" alt="小区管控时间对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/小区管控时间对于患者数量的影响.png" alt="小区管控时间对于患者数量的影响" style="zoom:60%;" />
 
    **小区管控是最为严苛的防控措施，虽然不能很好地控制累计确诊数量，但可以有效控制防控进度**
 
@@ -566,7 +566,7 @@ $$
 
    **不同自我防护效果对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/自我防护的效果对于患者数量的影响.png" alt="自我防护的效果对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/自我防护的效果对于患者数量的影响.png" alt="自我防护的效果对于患者数量的影响" style="zoom:60%;" />
 
    **自我防护效果可以有效控制疫情的扩散，也可以控制疫情防控的进度**
 
@@ -581,11 +581,11 @@ $$
 
    **不同医疗援助到达前的隔离强度对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/医疗援助前的隔离效果对于患者数量的影响.png" alt="医疗援助前的隔离效果对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/医疗援助前的隔离效果对于患者数量的影响.png" alt="医疗援助前的隔离效果对于患者数量的影响" style="zoom:60%;" />
 
    $w_0=2.5$对应的$I$太大，选取前$4$条曲线进行分析：
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/医疗援助前的隔离效果对于患者数量的影响_clear.png" alt="医疗援助前的隔离效果对于患者数量的影响_clear" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/医疗援助前的隔离效果对于患者数量的影响_clear.png" alt="医疗援助前的隔离效果对于患者数量的影响_clear" style="zoom:60%;" />
 
    **医疗援助到达前的隔离强度对于患者人数的影响较为显著，且$w_0=2.25～2.5$中存在一个关键点，超过此点，疫情防控形势将发生很大变化**
 
@@ -600,7 +600,7 @@ $$
 
    **不同医疗援助到达后的隔离强度对应的患者人数变化趋势：**
 
-   <img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/医疗援助后的隔离效果对于患者数量的影响.png" alt="医疗援助后的隔离效果对于患者数量的影响" style="zoom:60%;" />
+   <img src="https://github.com/ziseSunny/virus-simulation/blob/master/医疗援助后的隔离效果对于患者数量的影响.png" alt="医疗援助后的隔离效果对于患者数量的影响" style="zoom:60%;" />
 
    **医疗援助到达后的隔离强度对于患者人数的影响不显著，但可以控制疫情防控的进度**
 
@@ -624,11 +624,11 @@ $$
 
 **逐步加入各因素对应的患者人数变化趋势：**
 
-<img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/各因素对于患者数量的影响.png" alt="各因素对于患者数量的影响" style="zoom:60%;" />
+<img src="https://github.com/ziseSunny/virus-simulation/blob/master/各因素对于患者数量的影响.png" alt="各因素对于患者数量的影响" style="zoom:60%;" />
 
 最后的$2$条线几近重合，单独进行分析：
 
-<img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/是否引入小区管控对于患者数量的影响.png" alt="是否引入小区管控对于患者数量的影响" style="zoom:60%;" />
+<img src="https://github.com/ziseSunny/virus-simulation/blob/master/是否引入小区管控对于患者数量的影响.png" alt="是否引入小区管控对于患者数量的影响" style="zoom:60%;" />
 
 **有关的思考：**
 
@@ -642,7 +642,7 @@ $$
 
 **现有易感人群数量的变化趋势：**
 
-<img src="/Users/duanjingyuan/Documents/保研自荐材料/新冠病毒传播模拟/群体免疫的思考.png" alt="群体免疫的思考" style="zoom:60%;" />
+<img src="https://github.com/ziseSunny/virus-simulation/blob/master/群体免疫的思考.png" alt="群体免疫的思考" style="zoom:60%;" />
 
 在疫情得到控制后，易感人群的数量有所下降，有一部分人群对新冠肺炎已有自身免疫，说明群体免疫是存在的
 
@@ -689,11 +689,3 @@ $$
 6. 武汉市小区管控时间：http://wh.bendibao.com/news/2020211/107372.shtm
 
 7. 武汉市累计确诊数量：https://voice.baidu.com/act/newpneumonia/newpneumonia/?from=osari_aladin_banner&city=湖北-武汉
-
-
-
-
-
-# -
-# virus-simulation
-# virus-simulation
