@@ -36,8 +36,8 @@
    整个正方形代表所在区域，圆形代表人
    <img src="https://github.com/ziseSunny/virus/blob/master/密切接触.png" alt="密切接触" style="zoom:10%;" />
 
-2. **密切接触的公式：**
-   n的公式通过投点实验归纳得出
+2. **密切接触的公式：** n的公式通过投点实验归纳得出
+
    <img src="https://github.com/ziseSunny/virus/blob/master/picture/密切接触公式.png" alt="密切接触公式" style="zoom:30%;" >
 
    每个圆形都具有流动性，故n包含了中心点
