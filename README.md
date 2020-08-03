@@ -21,6 +21,7 @@
 #### **三、变量取值：**
 
 <img src="https://github.com/ziseSunny/virus/blob/master/picture/变量取值.png" alt="变量取值" style="zoom:50%;" >
+
 #### **四、模型构建：**
 
 ##### **（一）SIRD模型（在SIR的基础上单独考虑D）：**
