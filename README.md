@@ -93,7 +93,6 @@
 
    考虑在封城开始后，所在区域的流动系数发生变化
 
-   流动系数t的表达式为：
    <img src="https://github.com/ziseSunny/virus/blob/master/picture/流动系数.png" alt="流动系数" style="zoom:50%;" >
 
 7. **加入小区管控的4阶段模型：**
