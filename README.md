@@ -52,7 +52,7 @@
    <img src="https://github.com/ziseSunny/virus/blob/master/picture/2阶段模型.png" alt="2阶段模型" style="zoom:50%;" >
 5. **3阶段模型：**
 
-   <img src="https://github.com/ziseSunny/virus/blob/master/picture/变量说明1.png" alt="3阶段模型" style="zoom:50%;" >
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/3阶段模型.png" alt="3阶段模型" style="zoom:50%;" >
 
 **（二）SEIRD模型（在SEIR的基础上单独考虑D）：**
 
