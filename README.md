@@ -57,320 +57,57 @@
 
 1. 参数值的处理：
 
-   根据$SIRD$模型，得到第1阶段和第2阶段对应的p，第$2$阶段相对较崩溃，第1阶段还处于疫情防控的初期，故此时采用的p为两者的平均值，即p = (0.01671555+0.05222604)/2 = 0.034470795$
+   根据SIRD模型，得到第1阶段和第2阶段对应的p，第$2$阶段相对较崩溃，第1阶段还处于疫情防控的初期，故此时采用的p为两者的平均值，即p = (0.01671555+0.05222604)/2 = 0.034470795$
 
    在未引入流动系数时，第2阶段和第3阶段的n=4
 
-2. 示意图：$\beta$代表的是易感人群密切接触潜伏期人群或患者而成为潜伏期患者的概率
+2. 示意图：beta代表的是易感人群密切接触潜伏期人群或患者而成为潜伏期患者的概率
 
    <img src="https://github.com/ziseSunny/virus-simulation/blob/master/SEIRD.png" alt="SEIRD" style="zoom:50%;" />
 
-3. **基本的$3$阶段模型：**
+3. **基本的3阶段模型：**
 
    此模型没有引入自我防护、隔离、流动系数和小区管控
 
-   **微分形式：**
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/基本的3阶段模型_微分.png" alt="基本的3阶段模型_微分" style="zoom:50%;" >
 
-   第$1$阶段：
-   $$
-   n = \lceil \frac {d_t}{2\rho} \rceil^2 + 4
-   $$
+   由于p、n、alpha、gamma和k均已知，直接采用差分形式进行模拟
 
-   $$
-   \beta = pn
-   $$
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/基本的3阶段模型_差分.png" alt="基本的3阶段模型_差分" style="zoom:50%;" >
 
-   $$
-   \begin{cases} \frac{dS}{dt} = -\beta \frac{SE}{N} -\beta \frac{SI}{N} \\ \frac{dE}{dt} = \beta\frac{SE}{N} + \beta\frac{SI}{N} - \alpha E \\ \frac{dI}{dt} = \alpha E - \gamma I - dI \\ \frac{dR}{dt} = \gamma I \\ \frac{dD}{dt} = dI  \end{cases}
-   $$
+4. **加入自我防护的3阶段模型：**
 
-   第$2$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = pn
-   $$
-
-   $$
-   \begin{cases} \frac{dS}{dt} = -\beta \frac{SE}{N} -\beta \frac{SI}{N} \\ \frac{dE}{dt} = \beta\frac{SE}{N} + \beta\frac{SI}{N} - \alpha E \\ \frac{dI}{dt} = \alpha E - \gamma I - dI \\ \frac{dR}{dt} = \gamma I \\ \frac{dD}{dt} = dI  \end{cases}
-   $$
-
-   第$3$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = pn
-   $$
-
-   $$
-   \begin{cases} \frac{dS}{dt} = -\beta \frac{SE}{N} -\beta \frac{SI}{N} \\ \frac{dE}{dt} = \beta\frac{SE}{N} + \beta\frac{SI}{N} - \alpha E \\ \frac{dI}{dt} = \alpha E - k\gamma I - dI \\ \frac{dR}{dt} = k\gamma I \\ \frac{dD}{dt} = dI  \end{cases}
-   $$
-
-   由于$p$、$n$、$\alpha$、$\gamma$和$k$均已知，直接采用差分形式进行模拟
-
-   **差分形式：**
-
-   第$1$阶段：
-   $$
-   n = \lceil \frac {d_t}{2\rho} \rceil^2 + 4
-   $$
-
-   $$
-   \beta = pn
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + \beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$2$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = pn
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + \beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$3$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = pn
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + \beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - k\gamma I_i - dI_i \\ R_{i+1} = R_i + k\gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   判断疫情基本得到控制的条件为：$I \leq c$ && $E \leq c$ && 此时的时间大于峰值对应的时间
-
-4. **加入自我防护的$3$阶段模型：**
-
-   自我防护措施主要是引入变量$l$，综合考虑口罩等措施的实际防护能力和物资紧缺的状况，令$l = 0.7$
+   自我防护措施主要是引入变量l，综合考虑口罩等措施的实际防护能力和物资紧缺的状况，令l = 0.7
 
    假设封城开始后，人们就自觉进行自我防护
 
-   **差分形式：**
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/自我防护.png" alt="自我防护" style="zoom:50%;" >
 
-   第$1$阶段：
-   $$
-   n = \lceil \frac {d_t}{2\rho} \rceil^2 + 4
-   $$
+5. **加入隔离的3阶段模型：**
 
-   $$
-   \beta = np
-   $$
+   隔离主要影响易感者密切接触的患者数，此时用w来衡量易感者在不同阶段接触的患者数量
 
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + \beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$2$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)\beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$3$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)\beta \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)\beta\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - k\gamma I_i - dI_i \\ R_{i+1} = R_i + k\gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-5. **加入隔离的$3$阶段模型：**
-
-   隔离主要影响易感者密切接触的患者数，此时用$w$来衡量易感者在不同阶段接触的患者数量
-
-   与$w$有关的变量$f$的表达式为：
-   $$
-   f = \frac {I}{M+M'}
-   $$
-   **差分形式：**
-
-   第$1$阶段：
-   $$
-   n = \lceil \frac {d_t}{2\rho} \rceil^2 + 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   w = \begin{cases} w_0 & f \leq 1 \\ 
-                     w_0+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$2$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   w = \begin{cases} w_0 & f \leq 1 \\ 
-                     w_0+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$3$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   w = \begin{cases} w_1 & f \leq 1 \\ 
-                     w_1+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - k\gamma I_i - dI_i \\ R_{i+1} = R_i + k\gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
+   与w有关的变量f的表达式为：
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/f.png" alt="f" style="zoom:50%;" >
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/隔离.png" alt="隔离" style="zoom:50%;" >
 6. **流动系数的处理：**
 
    流动系数主要影响密切接触的距离，当所在区域的流动性增强时，密切接触的距离会增大
 
    考虑在封城开始后，所在区域的流动系数发生变化
 
-   流动系数$t$的表达式为：
-   $$
-   t = \begin{cases} 1 & 封城前 \\ 
-                     0.3 & 封城后 \end{cases}
-   $$
+   流动系数t的表达式为：
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/流动系数.png" alt="流动系数" style="zoom:50%;" >
 
-7. **加入小区管控的$4$阶段模型：**
+7. **加入小区管控的4阶段模型：**
 
-   根据相关资料，武汉市从$2020.2.11$开始全面实施小区管控，对应的$4$个阶段为：
+   根据相关资料，武汉市从$2020.2.11$开始全面实施小区管控，对应的4个阶段为：
 
-   $2019.12.8～2020.1.22$：共$46$天
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/4阶段.png" alt="4阶段" style="zoom:50%;" >
 
-   $2020.1.23～2020.2.3$：共$12$天
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/差分_2.png" alt="差分_2" style="zoom:50%;" >
 
-   $2020.2.4～2020.2.10$：共$7$天
-
-   $2020.2.11～$
-
-   **差分形式：**
-
-   第$1$阶段：
-   $$
-   t = 1
-   $$
-
-   $$
-   n = \lceil \frac {t * d_t}{2\rho} \rceil^2 + 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   w = \begin{cases} w_0 & f \leq 1 \\ 
-                     w_0+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -\beta \frac{S_iE_i}{N} -wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + \beta\frac{S_iE_i}{N} + wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$2$阶段：
-   $$
-   t = 0.3
-   $$
-
-   $$
-   n = \lceil \frac {t * d_t}{2\rho} \rceil^2 + 4
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   w = \begin{cases} w_0 & f \leq 1 \\ 
-                     w_0+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - \gamma I_i - dI_i \\ R_{i+1} = R_i + \gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$3$阶段：
-   $$
-   t = 0.3
-   $$
-
-   $$
-   n = \lceil \frac {t * d_t}{2\rho} \rceil^2 + 4
-   $$
-
-   $$
-   w = \begin{cases} w_1 & f \leq 1 \\ 
-                     w_1+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - k\gamma I_i - dI_i \\ R_{i+1} = R_i + k\gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
-
-   第$4$阶段：
-   $$
-   n = 4
-   $$
-
-   $$
-   w = \begin{cases} w_1 & f \leq 1 \\ 
-                     w_1+n(f-1) & f > 1 \end{cases}
-   $$
-
-   $$
-   \beta = np
-   $$
-
-   $$
-   \begin{cases} S_{i+1} = S_i -(1-l)\beta \frac{S_iE_i}{N} -(1-l)wp \frac{S_iI_i}{N} \\ E_{i+1} = E_i + (1-l)\beta\frac{S_iE_i}{N} + (1-l)wp\frac{S_iI_i}{N} - \alpha E_i \\ I_{i+1} = I_i + \alpha E_i - k\gamma I_i - dI_i \\ R_{i+1} = R_i + k\gamma I_i \\ D_{i+1} = D_i + dI_i  \end{cases}
-   $$
+   <img src="https://github.com/ziseSunny/virus/blob/master/picture/差分_4.png" alt="差分_4" style="zoom:50%;" >
 
    模拟结果为：
 
@@ -378,9 +115,9 @@
 
    <img src="https://github.com/ziseSunny/virus-simulation/blob/master/引入流动系数后的SEIR模型对应的患者人数趋势图.png" alt="引入流动系数后的SEIR模型对应的患者人数趋势图" style="zoom:60%;" />
 
-   累计确诊数量：$65861$，疫情得到基本控制的时间为：第$140$天
+   累计确诊数量：65861，疫情得到基本控制的时间为：第140天
 
-   根据公开数据，武汉市的累计确诊数量为：$50340$，共封城$76$天，则疫情基本得到控制的时间为：第$46+76=122$天，考虑到新冠肺炎的潜伏期为$7$天，且初期数据不够透明，本模型模拟的结果较为合理
+   根据公开数据，武汉市的累计确诊数量为：50340，共封城76天，则疫情基本得到控制的时间为：第46+76=122天，考虑到新冠肺炎的潜伏期为7天，且初期数据不够透明，本模型模拟的结果较为合理
 
 #### **五、敏感性分析：**
 
@@ -390,16 +127,16 @@
 
    **封城时间与累计确诊数量、基本得到控制的时间点：**
 
-   |      封城时间      | 第$37$天  | 第$42$天  | 第$47$天  | 第$52$天  | 第$57$天  |
+   |      封城时间      | 第37天  | 第42天  | 第47天  | 第52天  | 第57天  |
    | :----------------: | :-------: | :-------: | :-------: | :-------: | :-------: |
-   |    累计确诊数量    |  $6290$   |  $17398$  |  $65861$  | $118843$  | $2464403$ |
-   | 基本得到控制的时间 | 第$103$天 | 第$116$天 | 第$140$天 | 第$171$天 | 第$159$天 |
+   |    累计确诊数量    |  6290   |  17398  |  65861  | 118843  | 2464403 |
+   | 基本得到控制的时间 | 第103天 | 第116天 | 第140天 | 第171天 | 第159天 |
 
    **不同封城时间对应的患者人数变化趋势：**
 
    <img src="https://github.com/ziseSunny/virus-simulation/blob/master/封城时间对于患者数量的影响.png" alt="封城时间对于患者数量的影响" style="zoom:60%;" />
 
-   $d_1=56$对应的$I$过大，选取前$4$条曲线单独进行分析：
+   d_1=56对应的I过大，选取前4条曲线单独进行分析：
 
    <img src="https://github.com/ziseSunny/virus-simulation/blob/master/封城时间对于患者数量的影响_clear.png" alt="封城时间对于患者数量的影响_clear" style="zoom:60%;" />
 
