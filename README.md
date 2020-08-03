@@ -85,7 +85,6 @@
 
    隔离主要影响易感者密切接触的患者数，此时用w来衡量易感者在不同阶段接触的患者数量
 
-   与w有关的变量f的表达式为：
    <img src="https://github.com/ziseSunny/virus/blob/master/picture/f.png" alt="f" style="zoom:50%;" >
    <img src="https://github.com/ziseSunny/virus/blob/master/picture/隔离.png" alt="隔离" style="zoom:50%;" >
 6. **流动系数的处理：**
