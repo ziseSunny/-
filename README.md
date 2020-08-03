@@ -30,7 +30,7 @@
 
    **SIRD模型的示意图：**
 
-   <img src="https://github.com/ziseSunny/virus/blob/master/SIRD.png" alt="SIRD模型" style="zoom:30%;" >
+   <img src="https://github.com/ziseSunny/virus/blob/master/SIRD模型.png" alt="SIRD模型" style="zoom:30%;" >
 
    **密切接触的模型：**
    整个正方形代表所在区域，圆形代表人
